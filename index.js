@@ -151,10 +151,6 @@ function variableInterestRate (P,I,N){
     var interestRate = I;
     var years = N;
 
-    for (let i = 0; i < 10; i++) {
-        
-    }
-
     var periods = years * 12;
     var monthlyInterestRate = interestRate / 12;
 
@@ -163,7 +159,18 @@ function variableInterestRate (P,I,N){
     var denominator = n1 - 1;
     var monthlyRate = (numerator/denominator).toFixed(2);
 
-    console.log(`${name}, your monthly rate is ${monthlyRate}`);
+    for (let i = 0; i < 9; i++) {
+        if (interestRate > interestRate * 0.05){
+            interestRate += 0.2;
+            
+            // need to finish this section for Task 6....interest rate calculates as expected but needs to be rounded to 2 decimal points. Also need code for monthlyRate to update with new interestRate value from for loop//
+            
+            console.log(`${name}, with an interest rate of ${interestRate} your monthly rate is ${monthlyRate}`);
+        }
+        
+    }
+
+    // console.log(`${name}, with an interest rate of ${interestRate} your monthly rate is ${monthlyRate}`);
 }
 
 
