@@ -17,8 +17,8 @@ var name = "Felipe Slaughter-Quintero";
 (2) Create another variable called `periods` and give it the value of years*12.
 */
 
-var monthlyInterestRate = interestRate / 12;
-var periods = years * 12;
+var monthlyInterestRate = interestRate/12;
+var periods = years*12;
 
 
 // 🏡 Task 2: Harder Math
@@ -38,16 +38,17 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
-    var n1 = (1 + monthlyInterestRate)^years;
-    var numerator = principal * years * monthlyInterestRate;
-    var denominator = years - 1;
-    var monthlyRate = numerator/denominator;
+var n1 = Math.pow((1 + monthlyInterestRate), periods);
+var numerator = principal * n1 * monthlyInterestRate;
+var denominator = n1 - 1;
+var monthlyRate = numerator/denominator;
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
+
 
 var principal = 200000;
 var interestRate = 0.05;
@@ -58,11 +59,11 @@ var monthlyInterestRate = interestRate / 12;
 var periods = years * 12;
 
 function mortgageCalculator (){
-    var n1 = (1 + monthlyInterestRate)^n;
-    var numerator = p * n1 * monthlyInterestRate;
+    var n1 = Math.pow((1 + monthlyInterestRate), periods);
+    var numerator = principal * n1 * monthlyInterestRate;
     var denominator = n1 - 1;
-    var monthlyRate = numerator/denominator;
-    console.log(`${name}, your monthly rate is${monthlyRate}`);
+    var monthlyRate = (numerator/denominator).toFixed(2);
+    console.log(`${name}, your monthly rate is ${monthlyRate}`);
 }
 
 
