@@ -4,9 +4,11 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
+var principal = "200000";
+var interestRate = "0.05";
+var years = "30";
 
-
-
+var name = "Felipe Slaughter-Quintero";
 
 // 🏡 Task 1.5: Simple Math
 /* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
