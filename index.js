@@ -75,8 +75,21 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
+var name = "Felipe Slaughter-Quintero";
 
+function mortgageCalculator (P,I,N){
+    var principal = P;
+    var interestRate = I;
+    var years = N;
+    var periods = years * 12;
+    var monthlyInterestRate = interestRate / 12;
 
+    var n1 = Math.pow((1 + monthlyInterestRate), periods);
+    var numerator = principal * n1 * monthlyInterestRate;
+    var denominator = n1 - 1;
+    var monthlyRate = (numerator/denominator).toFixed(2);
+    console.log(`${name}, your monthly rate is ${monthlyRate}`);
+}
 
 
 // 🏡 Task 5: Conditionals
