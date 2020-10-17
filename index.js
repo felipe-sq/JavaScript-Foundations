@@ -37,7 +37,10 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
-
+var n1 = (1 + monthlyInterestRate)^N;
+var numerator = p * n1 * monthlyInterestRate;
+var denominator = n1 - 1;
+var monthlyRate = numerator/denominator;
 
 
 
