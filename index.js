@@ -4,9 +4,9 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
-var principal = "200000";
-var interestRate = "0.05";
-var years = "30";
+var principal = 200000;
+var interestRate = 0.05;
+var years = 30;
 
 var name = "Felipe Slaughter-Quintero";
 
@@ -38,7 +38,7 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
-    var n1 = (1 + monthlyInterestRate)^N;
+    var n1 = (1 + monthlyInterestRate)^years;
     var numerator = principal * years * monthlyInterestRate;
     var denominator = years - 1;
     var monthlyRate = numerator/denominator;
@@ -49,7 +49,14 @@ When your math is correct, monthlyRate will equal 1073.64
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-function calculateMortgage (principal, monthlyInterestRate, years){
+function mortgageCalculator (p, i, n){
+    var principal = 200000;
+    var interestRate = 0.05;
+    var years = 30;
+    var name = "Felipe Slaughter-Quintero";
+    var monthlyInterestRate = interestRate / 12;
+    var periods = years * 12;
+
     var n1 = (1 + monthlyInterestRate)^N;
     var numerator = principal * years * monthlyInterestRate;
     var denominator = years - 1;
