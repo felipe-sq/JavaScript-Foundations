@@ -17,7 +17,8 @@ var name = "Felipe Slaughter-Quintero";
 (2) Create another variable called `periods` and give it the value of years*12.
 */
 
-
+var monthlyInterestRate = interestRate / 12;
+var periods = years * 12;
 
 
 // 🏡 Task 2: Harder Math
