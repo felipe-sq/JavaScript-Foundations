@@ -109,14 +109,12 @@ function mortgageCalculator (P,I,N,C){
     var creditScore = C;
 
     if (creditScore > 740 ){
-          
+        interestRate = I * 0.95;
     }
     else if (creditScore < 660){
-          
+        interestRate = I * 1.05;
     }
-    else {
-        
-    }
+    else {interestRate = I}
 
     var periods = years * 12;
     var monthlyInterestRate = interestRate / 12;
@@ -125,6 +123,7 @@ function mortgageCalculator (P,I,N,C){
     var numerator = principal * n1 * monthlyInterestRate;
     var denominator = n1 - 1;
     var monthlyRate = (numerator/denominator).toFixed(2);
+
     console.log(`${name}, your monthly rate is ${monthlyRate}`);
 }
 
