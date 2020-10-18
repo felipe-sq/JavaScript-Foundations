@@ -144,34 +144,32 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-var name = "Felipe Slaughter-Quintero";
+var name = "Felipe Slaughter";
 
 function variableInterestRate (P,I,N){
+
     var principal = P;
-    var interestRate = I;
+    var interestRate = I +- 0.025;
     var years = N;
 
-    var periods = years * 12;
-    var monthlyInterestRate = interestRate / 12;
-
-    var n1 = Math.pow((1 + monthlyInterestRate), periods);
-    var numerator = principal * n1 * monthlyInterestRate;
-    var denominator = n1 - 1;
-    var monthlyRate = (numerator/denominator).toFixed(2);
-
     for (let i = 0; i < 9; i++) {
-        if (interestRate > interestRate * 0.05){
-            interestRate += 0.2;
-            
-            // need to finish this section for Task 6....interest rate calculates as expected but needs to be rounded to 2 decimal points. Also need code for monthlyRate to update with new interestRate value from for loop//
-            
-            console.log(`${name}, with an interest rate of ${interestRate} your monthly rate is ${monthlyRate}`);
-        }
+            interestRate += 0.005;
+
+            var periods = years * 12;
+            var monthlyInterestRate = interestRate / 12;
         
+            var n1 = Math.pow((1 + monthlyInterestRate), periods);
+            var numerator = principal * n1 * monthlyInterestRate;
+            var denominator = n1 - 1;
+            var monthlyRate = Math.round(numerator/denominator);
+
+            console.log(`${name}, with an interest rate of ${interestRate} your monthly rate is $ ${monthlyRate}`);
+        }
     }
 
-    // console.log(`${name}, with an interest rate of ${interestRate} your monthly rate is ${monthlyRate}`);
-}
+    // called function while testing code for Task 6
+    // variableInterestRate(200000, 0.04, 30)
+
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
