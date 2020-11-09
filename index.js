@@ -17,8 +17,8 @@ var name = "Felipe Slaughter-Quintero";
 (2) Create another variable called `periods` and give it the value of years*12.
 */
 
-var monthlyInterestRate = interestRate/12;
-var periods = years*12;
+var monthlyInterestRate = interestRate / 12;
+var periods = years * 12;
 
 
 // 🏡 Task 2: Harder Math
@@ -41,7 +41,7 @@ When your math is correct, monthlyRate will equal 1073.64
 var n1 = Math.pow((1 + monthlyInterestRate), periods);
 var numerator = principal * n1 * monthlyInterestRate;
 var denominator = n1 - 1;
-var monthlyRate = numerator/denominator;
+var monthlyRate = (numerator/denominator).toFixed(2);
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
@@ -49,16 +49,14 @@ var monthlyRate = numerator/denominator;
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-
-var principal = 200000;
-var interestRate = 0.05;
-var years = 30;
-var name = "Felipe Slaughter-Quintero";
-
-var monthlyInterestRate = interestRate / 12;
-var periods = years * 12;
-
 function mortgageCalculator (){
+    var principal = 200000;
+    var interestRate = 0.05;
+    var years = 30;
+    var name = "Felipe Slaughter-Quintero";
+    var monthlyInterestRate = interestRate / 12;
+    var periods = years * 12;
+
     var n1 = Math.pow((1 + monthlyInterestRate), periods);
     var numerator = principal * n1 * monthlyInterestRate;
     var denominator = n1 - 1;
@@ -66,7 +64,7 @@ function mortgageCalculator (){
     console.log(`${name}, your monthly rate is ${monthlyRate}`);
 }
 
-
+mortgageCalculator();
 
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
@@ -75,7 +73,6 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-var name = "Felipe Slaughter-Quintero";
 
 function mortgageCalculator (P,I,N){
     var principal = P;
@@ -88,12 +85,13 @@ function mortgageCalculator (P,I,N){
     var numerator = principal * n1 * monthlyInterestRate;
     var denominator = n1 - 1;
     var monthlyRate = (numerator/denominator).toFixed(2);
-    console.log(`${name}, your monthly rate is ${monthlyRate}`);
-}
+    console.log(monthlyRate);
+};
 
+mortgageCalculator(200000, 0.05, 30);
 
 // 🏡 Task 5: Conditionals
-/* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
+/* Add another parameter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
 
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 
@@ -102,7 +100,7 @@ Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by
 
 var name = "Felipe Slaughter-Quintero";
 
-function mortgageCalculator (P,I,N,C){
+function mortgageCalculator (P,I,N,C, name1){
     var principal = P;
     var interestRate = I;
     var years = N;
@@ -126,6 +124,11 @@ function mortgageCalculator (P,I,N,C){
 
     console.log(`${name}, your monthly rate is ${monthlyRate}`);
 }
+
+mortgageCalculator(200000, 0.05, 30, 640);
+mortgageCalculator(200000, 0.05, 30, 700);
+mortgageCalculator(200000, 0.05, 30, 790);
+
 
 
 // 🏡 Task 6: Loops
@@ -163,12 +166,12 @@ function variableInterestRate (P,I,N){
             var denominator = n1 - 1;
             var monthlyRate = Math.round(numerator/denominator);
 
-            console.log(`${name}, with an interest rate of ${interestRate} your monthly rate is $ ${monthlyRate}`);
+            console.log(`${name}, with an interest rate of ${interestRate.toFixed(3)} your monthly rate is $ ${monthlyRate}`);
         }
     }
 
     // called function while testing code for Task 6
-    // variableInterestRate(200000, 0.04, 30)
+    variableInterestRate(200000, 0.04, 30)
 
 
 
